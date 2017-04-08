@@ -1,12 +1,13 @@
 # Lampião
-The Cabra Macho's LAMP image
 
-<img align="center" src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Lampi%C3%A3o_MB.jpg" alt="Lampião" height="250">
+The Cabra Macho's LA*M*P image.
 
-(Actually there is no MySQL included)
+<a title="Benjamin Abrahão Botto [Public domain], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File%3ALampi%C3%A3o_MB.jpg"><img width="256" alt="Lampião MB" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Lampi%C3%A3o_MB.jpg/256px-Lampi%C3%A3o_MB.jpg"/></a>
+
+## Usage
 
 ```Dockerfile
-FROM leocavalcante/lampiao:1.0
+FROM leocavalcante/lampiao:<version>
 ```
 
 Overriding default configs
@@ -19,7 +20,7 @@ COPY config/php.ini /usr/local/etc/php/
 ### Single run
 
 ```bash
-docker run -d -p 8000:80 --name my-lamp-app -v "$PWD":/var/www/html leocavalcante/lampiao:1.0
+docker run -d -p 8000:80 --name my-lamp-app -v "$PWD":/var/www/html leocavalcante/lampiao:<version>
 ```
 
 ### Docker Compose
@@ -38,7 +39,7 @@ services:
       - ./data/:/var/lib/mysql/
 
   web:
-    image: leocavalcante/lampiao:1.0
+    image: leocavalcante/lampiao:<version>
     volumes:
       - ./:/var/www/html/
     ports:
