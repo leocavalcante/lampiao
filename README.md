@@ -26,7 +26,7 @@ docker run -d -p 8000:80 --name my-lamp-app -v "$PWD":/var/www/html leocavalcant
 ### Docker Compose
 
 ```yaml
-version: '3'
+version: "3"
 services:
   db:
     image: mysql
@@ -46,5 +46,4 @@ services:
       - "${DOCKER_WEB_PORT}:80"
     links:
       - db
-
 ```
